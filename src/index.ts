@@ -14,8 +14,9 @@
 
 //04.関数の型定義
 import { logMessage } from "./function/basic";
-import {isUserSignedIn} from "./function/parameters";
+import {isUserSignedIn, isUserSignedIn2} from "./function/parameters";
 
 logMessage("Hello TypeScript!")
 isUserSignedIn( "ABC", "TypeScript")
 isUserSignedIn("DEF")
+isUserSignedIn2("ABC")
