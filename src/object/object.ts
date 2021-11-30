@@ -23,4 +23,23 @@ export default function objectSample() {
 
   console.log("Object object sample 2:", country)
 
+  // オプショナルとreadonly
+  const maskedRider: {
+    age: number
+    lastName: string
+    readonly firstName: string
+    gender?: string
+  } = {
+    age: 22,
+    lastName: "Hongou",
+    firstName: "Takeshi"
+  }
+
+  maskedRider.gender = 'male'
+  maskedRider.lastName = 'Fujioka'
+  // maskedRider.firstName = 'Hiroshi'
+
+  console.log("Object object sample 3:", maskedRider)
+
+
 }
