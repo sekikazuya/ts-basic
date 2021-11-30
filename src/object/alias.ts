@@ -20,4 +20,55 @@ export default function typeAliasSample() {
   }
   console.log("Object alias sample 2:", america)
 
+  // 合併型(union)と交差型(intersection)
+  type Knight = {
+    hp: number
+    sp: number
+    weapon: string
+    swordSkill: string
+  }
+
+  type Wizard = {
+    hp: number
+    mp: number
+    weapon: string
+    magicSkill: string
+  }
+
+  // 合併型... KnightまたはWizardの型を持つ
+  type Advenurer = Knight | Wizard
+
+  // 交差型.. KnightかつWizardの型を持つ
+  type Paladin = Knight & Wizard
+
+  // Knight寄りの冒険者
+  const advenurer1: Advenurer = {
+    hp: 100,
+    sp: 30,
+    weapon: '木の剣',
+    swordSkill: '三連斬り'
+  }
+
+  // Wizard寄りの冒険者
+  const advenurer2: Advenurer = {
+    hp: 100,
+    mp: 30,
+    weapon: '木の杖',
+    magicSkill: 'ファイアボール'
+  }
+
+  console.log("Object alias sample 3:", advenurer1)
+  console.log("Object alias sample 4:", advenurer2)
+
+  const paladin: Paladin = {
+    hp: 300,
+    sp: 100,
+    mp: 100,
+    weapon: '魔法の剣',
+    swordSkill: '三連斬り',
+    magicSkill: 'ファイアボール'
+  }
+
+  console.log("Object alias sample 5:", paladin)
+
 }
