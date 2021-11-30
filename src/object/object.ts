@@ -41,5 +41,18 @@ export default function objectSample() {
 
   console.log("Object object sample 3:", maskedRider)
 
+  // インデックスシグネチャ
+  const capitals: {
+    [countryName: string]: string
+  } = {
+    Japan: 'Tokyo',
+    Korea: 'Seoul'
+  }
+
+  capitals.China = 'Beijing'
+  capitals.Canada = 'Ottawa'
+
+  console.log("Object object sample 4:", capitals)
+
 
 }
