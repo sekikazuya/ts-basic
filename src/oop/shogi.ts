@@ -7,7 +7,7 @@ class Position {
   constructor(private suji: Suji, private dan: Dan) {}
 
   // パラメーターに渡された位置と現在の位置を比較するメソッド
-  distanceForm(position: Position, player: Player) {
+  distanceFrom(position: Position, player: Player) {
     if (player === 'first') {
       return {
         suji: Math.abs(position.suji - this.suji),
@@ -18,7 +18,6 @@ class Position {
         suji: Math.abs(position.suji - this.suji),
         dan: -(Math.abs(Number(position.dan) - Number(this.dan)))
       }
-    }
     }
   }
 }
@@ -49,7 +48,7 @@ abstract class Piece {
 class Osho extends Piece {
   // 王将のcanMoveToメソッドを具体的に実装する
   canMoveTo(position: Position, player: Player): boolean {
-    const distance = this.position.distanceForm(position, player)
+    const distance = this.position.distanceFrom(position, player)
     return (distance.suji < 2 && distance.dan < 2)
   }
 }
